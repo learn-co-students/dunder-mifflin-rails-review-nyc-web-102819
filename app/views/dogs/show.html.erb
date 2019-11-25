@@ -1,0 +1,10 @@
+<div>
+<span>Name: <%= @dog.name %></span><br>
+<span>Breed: <%= @dog.breed %></span><br>
+<span>Age: <%= @dog.age.upcase %></span><br><br>
+<span>Employee List: <ul><% @dog.employees.each do |employee| %>
+    <li><%= link_to (employee.first_name + " " + employee.last_name), employee_path(employee) %></li>
+    <% end %></ul>
+</span>
+</div>
+<%= link_to "Back to Dogs", dogs_path %>
