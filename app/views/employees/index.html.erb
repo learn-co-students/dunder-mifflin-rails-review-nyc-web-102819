@@ -1,0 +1,11 @@
+<h1>👩‍💼 Employees 👨‍💼</h1>
+
+<hr>
+<%= link_to "Create New Employee", new_employee_path %>
+<hr>
+
+<% @employees.each do |employee| %>
+  <ul>
+    <li> <%=link_to (employee.first_name+" "+employee.last_name), employee_path(employee) %> </li>
+  </ul>
+<% end %>
