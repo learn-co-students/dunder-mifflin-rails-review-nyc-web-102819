@@ -1,0 +1,19 @@
+<h1>About this Dunderhead</h1>
+
+<% if @employee.img_url%>
+    <%=image_tag(@employee.img_url, size: "500x300")%>
+<% end%>
+
+<p><u>Name:</u> <%= @employee.first_name + " " + @employee.last_name %>
+<p><u>Alias:</u> <%= @employee.alias %>
+<p><u>Title:</u> <%= @employee.title %>
+<p><u>Office:</u> <%= @employee.office %>
+<p>
+<%= link_to "Edit Employee", edit_employee_path(@employee.id)%>
+<p>
+<%= button_to "Fire Employee", {action: 'delete', id: @employee.id }, method: :delete %>
+<hr>
+<p>Dog:
+<br><%= link_to @dog.name, dog_path(@dog.id) %>
+<hr>
+<%= link_to "All Employees", employees_path %>
