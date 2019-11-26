@@ -1,0 +1,19 @@
+<h1>Look at this cute doggo!</h1>
+
+
+<p><u>Name:</u> <%= @dog.name %>
+<p><u>Breed:</u> <%= @dog.breed %>
+<p><u>Age:</u> <%= @dog.age %>
+
+<hr>
+<u>Employees:</u><br>
+<% if @employees.count > 0 %>
+    <% @employees.each do |employee| %>
+        <%= link_to employee.first_name + " " +  employee.last_name, employee_path(employee.id)%><br>
+    <% end %>
+<% else %>
+    <%= "This doggo has no employees."  %>
+<% end %>
+
+<hr>
+<%= link_to "All Doggos", dogs_path %>
