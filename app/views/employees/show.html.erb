@@ -1,0 +1,12 @@
+<div>
+<span><%= image_tag "#{@employee.img_url}", size: "300" %></span><br><br>
+<span>First Name: <%= @employee.first_name %></span><br>
+<span>Last Name: <%= @employee.last_name %></span><br>
+<span>Alias: <%= @employee.alias %></span><br>
+<span>Title: <%= @employee.title %></span><br>
+<span>Office: <%= @employee.office %></span><br>
+<span>Dog: <%= link_to @employee.dog.name, dog_path(@employee.dog) %></span><br>
+</div>
+<br>
+<br>
+<%= link_to "Back to Employees", employees_path %>
